@@ -1,6 +1,11 @@
 # ChangeLog
 
 
+## [2.12.6]
+
+- Upgrade minimatch dependency since older version have safe risk.
+
+
 ## [2.12.5]
 
 - Support embedded React HTML syntax in event handlers like `<div onClick={() => <div className="class1">}>`.
