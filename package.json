@@ -205,6 +205,11 @@
 					"type": "boolean",
 					"default": false,
 					"description": "Whether enables log level message, set it to `true` for debugging."
+				},
+				"CSSNavigation.maxFileCount": {
+					"type": "number",
+					"default": 1000,
+					"description": "The maximum number of files to scan per file type. Increase this in large projects if some files are missing"
 				}
 			}
 		}

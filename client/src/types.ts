@@ -29,4 +29,6 @@ interface Configuration {
 
 	maxHoverStylePropertyCount: number
 	enableGlobalEmbeddedCSS: boolean
+
+	maxFileCount: number;
 }
