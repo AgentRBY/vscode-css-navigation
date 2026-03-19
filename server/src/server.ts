@@ -178,6 +178,8 @@ class CSSNavigationServer {
 		// Shared glob querying.
 		let alwaysIncludeGlobSharer = alwaysIncludeGlobPattern ? new GlobPathSharer(alwaysIncludeGlobPattern, startPath) : undefined
 
+		const maxFileCount = configuration.maxFileCount;
+
 		this.htmlServiceMap = new HTMLServiceMap(documents, connection.window, {
 			includeFileGlobPattern: generateGlobPatternByExtensions(configuration.activeHTMLFileExtensions)!,
 			excludeGlobPattern: generateGlobPatternByPatterns(configuration.excludeGlobPatterns) || undefined,
@@ -185,8 +187,8 @@ class CSSNavigationServer {
 			startPath,
 			ignoreFilesBy: configuration.ignoreFilesBy as Ignore[],
 
-			// Track at most 1000 html like files.
-			mostFileCount: 1000,
+			// By default track at most 1000 html like files.
+			mostFileCount: maxFileCount,
 
 			// Release resources if has not been used for 30 mins.
 			releaseTimeoutMs: 30 * 60 * 1000,
@@ -199,8 +201,8 @@ class CSSNavigationServer {
 			startPath,
 			ignoreFilesBy: configuration.ignoreFilesBy as Ignore[],
 
-			// Track at most 1000 css files.
-			mostFileCount: 1000,
+			// By default track at most 1000 css files.
+			mostFileCount: maxFileCount,
 		}, configuration)
 
 		this.htmlServiceMap.bindCSSServiceMap(this.cssServiceMap)

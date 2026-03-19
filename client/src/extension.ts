@@ -216,6 +216,7 @@ export class CSSNavigationExtension {
 
 			maxHoverStylePropertyCount: config.get('maxHoverStylePropertyCount', 0),
 			enableGlobalEmbeddedCSS: config.get('enableGlobalEmbeddedCSS', false),
+			maxFileCount: config.get('maxFileCount', 1000),
 		}
 	}
 
