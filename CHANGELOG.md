@@ -1,6 +1,11 @@
 # ChangeLog
 
 
+## [2.13.0]
+
+- Merge pull request from `AgentRBY@github.com`, and add a new option `maxFileCount` for large projects.
+
+
 ## [2.12.6]
 
 - Upgrade minimatch dependency since older version have safe risk.

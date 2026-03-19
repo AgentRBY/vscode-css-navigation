@@ -32,7 +32,7 @@ export interface FileTrackerOptions {
 	startPath?: string
 
 	/** Most count of files to track, default value is `Infinity`. */
-	mostFileCount?: number
+	maxFileCount?: number
 
 	/** If not use service after some milliseconds, release all resources. */
 	releaseTimeoutMs?: number
@@ -50,7 +50,7 @@ export abstract class FileTracker {
 	readonly startPath: string | null
 	readonly alwaysIncludeGlobSharer: GlobPathSharer | null
 	readonly ignoreFilesBy: Ignore[]
-	readonly mostFileCount: number
+	readonly maxFileCount: number
 	readonly releaseTimeoutMs: number
 	readonly trackingMap: TrackingMap = new TrackingMap()
 
@@ -73,7 +73,7 @@ export abstract class FileTracker {
 		this.startPath = options.startPath || null
 		this.alwaysIncludeGlobSharer = options.alwaysIncludeGlobSharer || null
 		this.ignoreFilesBy = options.ignoreFilesBy || []
-		this.mostFileCount = options.mostFileCount ?? Infinity
+		this.maxFileCount = options.maxFileCount ?? Infinity
 		this.releaseTimeoutMs = options.releaseTimeoutMs ?? Infinity
 
 		this.test = new TrackingTest(options)
@@ -185,8 +185,8 @@ export abstract class FileTracker {
 				this.trackPath(absPath, reason)
 				count++
 
-				if (count >= this.mostFileCount) {
-					this.window.showWarningMessage(`CSS Navigation limits scanning at most "${this.mostFileCount}" files for performance reason!`)
+				if (count >= this.maxFileCount) {
+					this.window.showWarningMessage(`CSS Navigation limits scanning at most "${this.maxFileCount}" files for performance reason!`)
 					break
 				}
 			}

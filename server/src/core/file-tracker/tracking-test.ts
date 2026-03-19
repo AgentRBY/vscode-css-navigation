@@ -6,8 +6,8 @@ import {GlobPathSharer} from './glob-path-sharer'
 
 export class TrackingTest {
 
-	private includeFileMatcher: minimatch.IMinimatch
-	private excludeMatcher: minimatch.IMinimatch | null
+	private includeFileMatcher: minimatch.Minimatch
+	private excludeMatcher: minimatch.Minimatch | null
 	private alwaysIncludeGlobSharer: GlobPathSharer | null
 
 	constructor(options: FileTrackerOptions) {

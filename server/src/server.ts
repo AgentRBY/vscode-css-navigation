@@ -188,7 +188,7 @@ class CSSNavigationServer {
 			ignoreFilesBy: configuration.ignoreFilesBy as Ignore[],
 
 			// By default track at most 1000 html like files.
-			mostFileCount: maxFileCount,
+			maxFileCount: maxFileCount,
 
 			// Release resources if has not been used for 30 mins.
 			releaseTimeoutMs: 30 * 60 * 1000,
@@ -202,7 +202,7 @@ class CSSNavigationServer {
 			ignoreFilesBy: configuration.ignoreFilesBy as Ignore[],
 
 			// By default track at most 1000 css files.
-			mostFileCount: maxFileCount,
+			maxFileCount: maxFileCount,
 		}, configuration)
 
 		this.htmlServiceMap.bindCSSServiceMap(this.cssServiceMap)

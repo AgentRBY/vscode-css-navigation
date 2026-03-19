@@ -134,6 +134,7 @@ editor.quickSuggestions": {
 | `ignoreCustomAndComponentTagDefinition` | When `true` by default, Custom-Element or Component tag (like React Component) definition going from HTML to CSS will be ignored, such that it goes to it's custom-element or component definition place directly which has implemented by other plugins.
 | `ignoreFilesBy`                         | Specifies this to ignore files and directories list in `.gitignore` or `.npmignore` when looking for css definitions. Default value is `[".gitignore"]`.
 | `maxHoverStylePropertyCount`            | When mouse hover at a class or id attribute, how many style properties at most should show. This option also affects the style properties in css selector completion description. Default value is `4`.
+| `maxFileCount`                          | The maximum number of files to scan per file type. Increase this in large projects if some files are missing. Default value is `1000`.
 | `enableLogLevelMessage`                 | Whether to enable log level message, set it to `true` for debugging.
 | `enableGoToDefinition`                  | Whether to enable goto definition service. Default value is `true`.
 | `enableWorkspaceSymbols`                | Whether to enable workspace symbol service. Default value is `true`.

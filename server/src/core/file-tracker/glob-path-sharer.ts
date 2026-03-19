@@ -9,7 +9,7 @@ export class GlobPathSharer {
 	readonly pattern: string
 	readonly fromPath: string
 	private cachedResult: string[] | null = null
-	private matcher: minimatch.IMinimatch
+	private matcher: minimatch.Minimatch
 
 	constructor(pattern: string, fromPath: string) {
 		this.pattern = pattern
