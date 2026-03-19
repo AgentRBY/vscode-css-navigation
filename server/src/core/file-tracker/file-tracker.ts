@@ -31,7 +31,7 @@ export interface FileTrackerOptions {
 	/** Start directory to track files. */
 	startPath?: string
 
-	/** Most count of files to track, default value is `Infinity`. */
+	/** The max count of files to track, default value is `Infinity`. */
 	maxFileCount?: number
 
 	/** If not use service after some milliseconds, release all resources. */
@@ -186,7 +186,7 @@ export abstract class FileTracker {
 				count++
 
 				if (count >= this.maxFileCount) {
-					this.window.showWarningMessage(`CSS Navigation limits scanning at most "${this.maxFileCount}" files for performance reason!`)
+					this.window.showWarningMessage(`CSS Navigation limits scanning at most "${this.maxFileCount}" files for performance reason, you may increase it by setting 'maxFileCount' option!`)
 					break
 				}
 			}
